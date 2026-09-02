@@ -12,8 +12,9 @@ var alunosRouter = require('./routes/rtAlunos');
 require('dotenv').config({ path: path.join(__dirname, 'dw3frontend.env'), quiet: true });
 var app = express();
 var viewsPath = path.join(__dirname, 'views');
+var appsPath = path.join(__dirname, 'apps');
 const port = process.env.PORT || 40100;
-app.set('views', viewsPath);
+app.set('views', [viewsPath, appsPath]);
 app.set('view engine', 'njk');
 nunjucks.configure(viewsPath, {
     autoescape: true,
