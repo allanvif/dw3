@@ -2,7 +2,6 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var nunjucks = require('nunjucks');
-// Linhas adiconadas
 var indexRouter = require('./routes/rtIndex');
 var loginRouter = require('./routes/rtLogin');
 var homeRouter = require('./routes/rtHome');
@@ -21,7 +20,7 @@ nunjucks.configure(viewsPath, {
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(express.static(path.join(__dirname, 'public')));
-    // Linhas adicionadas
+    app.use('/apps', express.static(path.join(__dirname, 'apps')));
     app.use('/', indexRouter);
     app.use('/login', loginRouter);
     app.use('/home', homeRouter);
