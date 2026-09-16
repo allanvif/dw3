@@ -62,3 +62,8 @@ Authorization: Bearer {{accessToken}}
 DELETE http://localhost:40000/deleteAluno/1 HTTP/1.1
 content-type: application/json
 Authorization: Bearer {{accessToken}}
+
+### teste de buscar cursos para alunos
+GET http://localhost:40000/getCursosToAlunos HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
